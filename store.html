@@ -1,570 +1,87 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="pragma" content="no-cache" />
-<meta http-equiv="cache-control" content="max-age=604800" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>المتجر - المسعودي للعطور</title>
-<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-<script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
-<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-<link href="fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
-<link href="css/ui.css" rel="stylesheet" type="text/css"/>
-<link href="css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
-<script src="js/script.js" type="text/javascript"></script>
-
-<style>
-/* ===== نفس تنسيقات index.html ===== */
-* { box-sizing: border-box; }
-body { background: #f8f4f0; font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif; direction: rtl; }
-
-.announcement-bar {
-    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-    color: #fff;
-    padding: 14px 0;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-    border-bottom: 4px solid #FFD700;
-    box-shadow: 0 4px 25px rgba(255,215,0,0.15);
-    position: relative;
-    overflow: hidden;
-}
-.announcement-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,215,0,0.08), transparent);
-    animation: shine 4s infinite;
-}
-@keyframes shine {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
-.announcement-bar i { margin: 0 8px; color: #FFD700; animation: blink 1.8s infinite; }
-@keyframes blink {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(1.2); }
-}
-.announcement-bar .highlight { color: #FFD700; font-weight: 900; }
-
-.brand-header {
-    background: linear-gradient(135deg, #1a1a2e, #2d1b0e);
-    padding: 25px 0 18px 0;
-    text-align: center;
-    border-bottom: 3px solid #FFD700;
-}
-.brand-header .brand-name {
-    font-size: 4.5rem;
-    font-weight: 900;
-    letter-spacing: 3px;
-    text-shadow: 0 0 30px rgba(255,215,0,0.25);
-    animation: colorShift 5s infinite;
-    display: inline-block;
-    padding: 0 20px;
-}
-@keyframes colorShift {
-    0% { color: #FFD700; text-shadow: 0 0 20px rgba(255,215,0,0.3); }
-    20% { color: #FF6B6B; text-shadow: 0 0 20px rgba(255,107,107,0.3); }
-    40% { color: #4ECDC4; text-shadow: 0 0 20px rgba(78,205,196,0.3); }
-    60% { color: #FFD93D; text-shadow: 0 0 20px rgba(255,217,61,0.3); }
-    80% { color: #FF6B6B; text-shadow: 0 0 20px rgba(255,107,107,0.3); }
-    100% { color: #FFD700; text-shadow: 0 0 20px rgba(255,215,0,0.3); }
-}
-.brand-header .brand-sub {
-    font-size: 1.2rem;
-    color: #ccc;
-    margin-top: 8px;
-    letter-spacing: 4px;
-    font-weight: 300;
-}
-.brand-header .brand-sub i { color: #FFD700; margin: 0 5px; }
-
-.header-nav {
-    background: #f8f4f0;
-    padding: 12px 0;
-    border-bottom: 2px solid #e0d5c8;
-}
-.header-nav .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.header-nav .nav-left {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.header-nav .nav-left a {
-    color: #555;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s;
-    padding: 5px 8px;
-    border-radius: 5px;
-}
-.header-nav .nav-left a:hover { color: #8B4513; background: rgba(139,69,19,0.05); }
-.header-nav .nav-left a i { margin-left: 5px; }
-.header-nav .nav-right {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.header-nav .nav-right .btn-signin {
-    background: #8B4513;
-    color: #fff !important;
-    padding: 8px 22px;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: all 0.3s;
-    text-decoration: none;
-    display: inline-block;
-}
-.header-nav .nav-right .btn-signin:hover {
-    background: #a0522d;
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(139,69,19,0.3);
-}
-.header-nav .nav-right a {
-    color: #555;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-.header-nav .nav-right a:hover { color: #8B4513; }
-.header-nav .nav-right .cart-icon {
-    position: relative;
-    font-size: 1.4rem;
-    color: #8B4513;
-}
-.header-nav .nav-right .cart-icon .badge {
-    position: absolute;
-    top: -10px;
-    right: -12px;
-    background: #e74c3c;
-    color: #fff;
-    border-radius: 50%;
-    padding: 2px 8px;
-    font-size: 0.65rem;
-    font-weight: bold;
-    min-width: 20px;
-    text-align: center;
-}
-
-.category-bar {
-    background: #2d1b0e;
-    padding: 14px 0;
-    border-bottom: 3px solid #FFD700;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-.category-bar .categories {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-.category-bar .categories a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.95rem;
-    padding: 6px 16px;
-    border-radius: 25px;
-    transition: all 0.3s;
-    font-weight: 500;
-    border: 1px solid transparent;
-}
-.category-bar .categories a:hover {
-    background: #FFD700;
-    color: #1a1a2e;
-    border-color: #FFD700;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(255,215,0,0.2);
-}
-.category-bar .categories a i { margin-left: 6px; }
-.category-bar .categories a.active {
-    background: #FFD700;
-    color: #1a1a2e;
-}
-
-.search-section {
-    background: #fff;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-}
-.search-bar {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    background: #f5f0eb;
-    border-radius: 50px;
-    overflow: hidden;
-    border: 2px solid #e0d5c8;
-    transition: all 0.3s;
-}
-.search-bar:focus-within {
-    border-color: #8B4513;
-    box-shadow: 0 0 0 4px rgba(139,69,19,0.1);
-}
-.search-bar input {
-    flex: 1;
-    border: none;
-    padding: 12px 22px;
-    background: transparent;
-    font-size: 0.95rem;
-    outline: none;
-    color: #333;
-}
-.search-bar input::placeholder { color: #aaa; }
-.search-bar button {
-    background: #8B4513;
-    border: none;
-    padding: 12px 25px;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-    font-size: 0.95rem;
-}
-.search-bar button:hover { background: #a0522d; }
-
-.products-section { padding: 30px 0; }
-.products-section .page-title {
-    font-size: 2rem;
-    font-weight: 900;
-    color: #2d1b0e;
-    border-right: 5px solid #FFD700;
-    padding-right: 15px;
-    margin-bottom: 25px;
-}
-.products-section .product-grid .card {
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s;
-    border: 1px solid #e0d5c8;
-    background: #fff;
-    margin-bottom: 25px;
-}
-.products-section .product-grid .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-    border-color: #8B4513;
-}
-.products-section .product-grid .card .img-wrap {
-    height: 210px;
-    overflow: hidden;
-    background: #f5f0eb;
-}
-.products-section .product-grid .card .img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s;
-    background: #eee;
-}
-.products-section .product-grid .card:hover .img-wrap img { transform: scale(1.06); }
-.products-section .product-grid .card .title { color: #2d1b0e; font-weight: 700; font-size: 0.95rem; }
-.products-section .product-grid .card .price { color: #8B4513; font-weight: 900; font-size: 1.25rem; }
-.products-section .product-grid .card .btn-add {
-    background: #8B4513;
-    color: #fff;
-    border: none;
-    padding: 8px 0;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: all 0.3s;
-    width: 100%;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-}
-.products-section .product-grid .card .btn-add:hover {
-    background: #a0522d;
-    transform: scale(1.02);
-}
-.products-section .product-grid .card .price-old {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 0.9rem;
-    margin-right: 8px;
-}
-.products-section .product-grid .card .price-new {
-    color: #e74c3c;
-    font-weight: 900;
-    font-size: 1.2rem;
-}
-.products-section .product-grid .card .discount-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: #e74c3c;
-    color: #fff;
-    padding: 4px 14px;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    font-weight: 900;
-    z-index: 10;
-    box-shadow: 0 3px 12px rgba(231,76,60,0.3);
-}
-
-.footer-custom {
-    background: #1a1a2e;
-    color: #aaa;
-    padding: 30px 0 20px 0;
-    margin-top: 50px;
-    border-top: 3px solid #FFD700;
-}
-.footer-custom .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-}
-.footer-custom .footer-links a {
-    color: #aaa;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-size: 0.95rem;
-}
-.footer-custom .footer-links a:hover { color: #FFD700; }
-.footer-custom .footer-links a i { margin-left: 6px; }
-.footer-custom .footer-bottom {
-    text-align: center;
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    padding-top: 15px;
-    margin-top: 10px;
-}
-.footer-custom .footer-bottom span { color: #FFD700; }
-
-@media (max-width: 768px) {
-    .brand-header .brand-name { font-size: 2.5rem; }
-    .category-bar .categories { gap: 10px; }
-    .category-bar .categories a { font-size: 0.8rem; padding: 4px 12px; }
-    .header-nav .nav-container { flex-direction: column; align-items: stretch; gap: 8px; }
-    .header-nav .nav-left { justify-content: center; }
-    .header-nav .nav-right { justify-content: center; }
-    .announcement-bar { font-size: 0.8rem; padding: 10px 0; }
-    .search-bar { max-width: 100%; }
-}
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المتجر – المسعودي للعطور</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ===== شريط الإعلانات ===== -->
-<div class="announcement-bar">
-    <i class="fas fa-gift"></i>
-    🎉 عروضات بمناسبة افتتاح المنصة التسويقية <span class="highlight">(المسعودي للعطور)</span> .. تخفيضات تصل إلى <span class="highlight">30%</span> وهدايا مجانية 🎁
-    <i class="fas fa-gift"></i>
+<div id="site-header"></div>
+
+<div class="page-hero">
+  <h1>🛍️ متجر المسعودي للعطور</h1>
+  <p>أكثر من 23 منتجاً فاخراً من العطور والبخور اليمنية</p>
+</div>
+<div class="breadcrumb-nav">
+  <a href="index.html">الرئيسية</a> ← المتجر
 </div>
 
-<!-- ===== شعار الموقع ===== -->
-<div class="brand-header">
-    <div class="container">
-        <div class="brand-name">المسعودي للعطور</div>
-        <div class="brand-sub"><i class="fas fa-star"></i> متجر العطور والبخور الفاخرة <i class="fas fa-star"></i></div>
-    </div>
-</div>
-
-<!-- ===== شريط التنقل ===== -->
-<div class="header-nav">
-    <div class="container">
-        <div class="nav-container">
-            <div class="nav-left">
-                <a href="#"><i class="fas fa-globe"></i> العربية</a>
-                <a href="#"><i class="fas fa-money-bill-wave"></i> ريال يمني</a>
-                <a href="#"><i class="fas fa-envelope"></i> البريد الإلكتروني</a>
-                <a href="#"><i class="fas fa-phone"></i> اتصل بنا</a>
-                <a href="./index.html"><i class="fas fa-home"></i> الرئيسية</a>
-            </div>
-            <div class="nav-right">
-                <a href="./signin.html" class="btn-signin"><i class="fas fa-user"></i> تسجيل الدخول</a>
-                <a href="./register.html" style="color:#8B4513; font-weight:600;">إنشاء حساب</a>
-                <a href="./cart.html" class="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="badge" id="cartBadge">0</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ===== شريط الأقسام ===== -->
-<div class="category-bar">
-    <div class="container">
-        <div class="categories">
-            <a href="./store.html?category=all" id="catAll"><i class="fas fa-th"></i> الكل</a>
-            <a href="./store.html?category=men" id="catMen"><i class="fas fa-male"></i> عطور رجالية</a>
-            <a href="./store.html?category=women" id="catWomen"><i class="fas fa-female"></i> عطور نسائية</a>
-            <a href="./store.html?category=bakhoor" id="catBakhoor"><i class="fas fa-fire"></i> بخور العوده</a>
-            <a href="./store.html?category=royal" id="catRoyal"><i class="fas fa-crown"></i> بخور الملكي</a>
-            <a href="./store.html?category=fragrances" id="catFragrances"><i class="fas fa-leaf"></i> رائحات</a>
-        </div>
-    </div>
-</div>
-
-<!-- ===== شريط البحث ===== -->
+<!-- SEARCH -->
 <div class="search-section">
-    <div class="container">
-        <div class="search-bar">
-            <input type="text" placeholder="ابحث عن عطرك المفضل..." id="searchInput">
-            <button onclick="searchProduct()"><i class="fas fa-search"></i> بحث</button>
-        </div>
-    </div>
+  <div class="search-wrapper">
+    <button class="search-btn" id="searchBtn">🔍 بحث</button>
+    <input type="text" class="search-input" id="searchInput" placeholder="ابحث عن عطر أو بخور...">
+  </div>
 </div>
 
-<!-- ========================= المنتجات ========================= -->
-<section class="products-section">
-    <div class="container">
-        <h2 class="page-title" id="pageTitle">جميع المنتجات</h2>
-        <div class="row product-grid" id="productGrid">
-            <!-- سيتم إنشاء المنتجات بواسطة JavaScript -->
-        </div>
-    </div>
-</section>
+<!-- FILTERS -->
+<div class="store-filters">
+  <span style="font-weight:700;color:#444;font-size:14px;">تصفية:</span>
+  <button class="filter-btn active" data-cat="all">🏷️ الكل</button>
+  <button class="filter-btn" data-cat="men">👔 رجالي</button>
+  <button class="filter-btn" data-cat="women">👗 نسائي</button>
+  <button class="filter-btn" data-cat="bakhoor">🪔 بخور العوده</button>
+  <button class="filter-btn" data-cat="royal">👑 بخور الملكي</button>
+  <button class="filter-btn" data-cat="fragrances">🌿 رائحات</button>
+</div>
 
-<!-- ========================= الفوتر ========================= -->
-<footer class="footer-custom">
-    <div class="container">
-        <div class="footer-links">
-            <a href="#"><i class="fas fa-info-circle"></i> عن الموقع</a>
-            <a href="#"><i class="fas fa-truck"></i> سياسة التوصيل</a>
-            <a href="#"><i class="fas fa-credit-card"></i> طرق الدفع</a>
-            <a href="#"><i class="fas fa-shield-alt"></i> الخصوصية</a>
-            <a href="#"><i class="fas fa-phone"></i> +967 77 123 4567</a>
-            <a href="#"><i class="fas fa-envelope"></i> info@almasoudi.com</a>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2025 <span>المسعودي للعطور</span> - صنعاء، اليمن
-        </div>
-    </div>
-</footer>
+<div class="section-header">
+  <div class="section-title" id="storeTitle">جميع المنتجات</div>
+  <span class="section-badge" id="storeCount">23 منتج</span>
+</div>
+<div class="products-container">
+  <div class="products-grid" id="storeGrid"></div>
+</div>
 
+<div id="site-footer"></div>
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
 <script>
-// ===== بيانات المنتجات (نفس المنتجات في index.html) =====
-const products = [
-    { id: 1, name: 'عطر المسعودي الفاخر', category: 'men', price: 45000, oldPrice: 55000, image: 'https://via.placeholder.com/300x300/8B4513/FFD700?text=عطر+المسعودي' },
-    { id: 2, name: 'عطر الليل الساحر', category: 'men', price: 32000, oldPrice: null, image: 'https://via.placeholder.com/300x300/2d1b0e/FFD700?text=عطر+الليل' },
-    { id: 3, name: 'عطر فرنسي عالمي', category: 'men', price: 80000, oldPrice: 95000, image: 'https://via.placeholder.com/300x300/1a1a2e/FFD700?text=عطر+فرنسي' },
-    { id: 4, name: 'عطر الورد البلدي', category: 'women', price: 27000, oldPrice: null, image: 'https://via.placeholder.com/300x300/FF1493/FFD700?text=عطر+الورد' },
-    { id: 5, name: 'عطر العنبر الملكي', category: 'women', price: 59000, oldPrice: 65000, image: 'https://via.placeholder.com/300x300/FFD700/8B4513?text=عطر+العنبر' },
-    { id: 6, name: 'عطر الزهور الفاخرة', category: 'women', price: 35000, oldPrice: null, image: 'https://via.placeholder.com/300x300/FF69B4/FFD700?text=عطر+الزهور' },
-    { id: 7, name: 'عود مروقي محسن', category: 'bakhoor', price: 10000, oldPrice: 12000, image: 'https://via.placeholder.com/300x300/5D4037/FFD700?text=عود+مروقي' },
-    { id: 8, name: 'دهن عود تجاري', category: 'bakhoor', price: 4500, oldPrice: null, image: 'https://via.placeholder.com/300x300/3E2723/FFD700?text=دهن+عود' },
-    { id: 9, name: 'أعواد بخور جاهزة', category: 'bakhoor', price: 3000, oldPrice: null, image: 'https://via.placeholder.com/300x300/4E342E/FFD700?text=بخور+جاهز' },
-    { id: 10, name: 'بخور عدني عرائسي', category: 'royal', price: 35000, oldPrice: 40000, image: 'https://via.placeholder.com/300x300/FFD700/8B4513?text=بخور+عدني' },
-    { id: 11, name: 'عود طبيعي فاخر كمبودي', category: 'royal', price: 30000, oldPrice: 35000, image: 'https://via.placeholder.com/300x300/1a1a2e/FFD700?text=عود+طبيعي' },
-    { id: 12, name: 'دهن عود فاخر', category: 'royal', price: 14000, oldPrice: 16000, image: 'https://via.placeholder.com/300x300/3E2723/FFD700?text=دهن+فاخر' },
-    { id: 13, name: 'زباد وروائح تقليدية', category: 'fragrances', price: 2500, oldPrice: null, image: 'https://via.placeholder.com/300x300/8D6E63/FFD700?text=زباد' },
-    { id: 14, name: 'عطر زيتي خام', category: 'fragrances', price: 4500, oldPrice: 5500, image: 'https://via.placeholder.com/300x300/4E342E/FFD700?text=عطر+زيتي' },
-    { id: 15, name: 'بخور عدني عادي', category: 'fragrances', price: 5000, oldPrice: 6500, image: 'https://via.placeholder.com/300x300/D7A86E/FFD700?text=بخور+عادي' }
-];
+  function renderStore(cat) {
+    const filtered = cat === 'all' ? products : products.filter(p => p.category === cat);
+    document.getElementById('storeGrid').innerHTML = filtered.map(p => renderProductCard(p)).join('');
+    document.getElementById('storeTitle').textContent = categoryNames[cat] || 'المنتجات';
+    document.getElementById('storeCount').textContent = filtered.length + ' منتج';
+  }
 
-// ===== أسماء التصنيفات =====
-const categoryNames = {
-    'all': 'جميع المنتجات',
-    'men': 'عطور رجالية',
-    'women': 'عطور نسائية',
-    'bakhoor': 'بخور العوده',
-    'royal': 'بخور الملكي',
-    'fragrances': 'رائحات'
-};
-
-// ===== الحصول على التصنيف من الرابط =====
-function getCategory() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('category') || 'all';
-}
-
-// ===== عرض المنتجات =====
-function renderProducts() {
-    const category = getCategory();
-    const grid = document.getElementById('productGrid');
-    const title = document.getElementById('pageTitle');
-    
-    title.textContent = categoryNames[category] || 'جميع المنتجات';
-    
-    let filtered = products;
-    if (category !== 'all') {
-        filtered = products.filter(p => p.category === category);
-    }
-    
-    grid.innerHTML = '';
-    if (filtered.length === 0) {
-        grid.innerHTML = '<div class="col-12 text-center" style="padding:60px 0;"><i class="fas fa-box-open" style="font-size:3rem;color:#ccc;"></i><h4 style="color:#999;margin-top:15px;">لا توجد منتجات في هذا القسم</h4></div>';
-        return;
-    }
-    
-    filtered.forEach(product => {
-        const hasDiscount = product.oldPrice && product.oldPrice > product.price;
-        const discountPercent = hasDiscount ? Math.round((1 - product.price / product.oldPrice) * 100) : 0;
-        
-        const col = document.createElement('div');
-        col.className = 'col-md-3 col-sm-6';
-        col.innerHTML = `
-            <div class="card card-product-grid" style="position:relative; margin-bottom:25px;">
-                ${hasDiscount ? `<div class="discount-badge">-${discountPercent}%</div>` : ''}
-                <a href="./product-detail.html?id=${product.id}" class="img-wrap">
-                    <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300/cccccc/666666?text=صورة+غير+متوفرة'">
-                </a>
-                <figcaption class="info-wrap" style="padding:15px;">
-                    <a href="./product-detail.html?id=${product.id}" class="title">${product.name}</a>
-                    <div class="price mt-1">
-                        ${hasDiscount ? 
-                            `<span class="price-new">﷼ ${product.price.toLocaleString()}</span> <span class="price-old">﷼ ${product.oldPrice.toLocaleString()}</span>` :
-                            `<span style="color:#8B4513; font-weight:900; font-size:1.2rem;">﷼ ${product.price.toLocaleString()}</span>`
-                        }
-                    </div>
-                    <a href="./cart.html" class="btn-add"><i class="fas fa-shopping-cart"></i> أضف إلى السلة</a>
-                </figcaption>
-            </div>
-        `;
-        grid.appendChild(col);
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      renderStore(this.dataset.cat);
     });
-    
-    // تحديث الفئة النشطة
-    document.querySelectorAll('.category-bar .categories a').forEach(el => {
-        el.classList.remove('active');
-    });
-    const catMap = { 'all': 'catAll', 'men': 'catMen', 'women': 'catWomen', 'bakhoor': 'catBakhoor', 'royal': 'catRoyal', 'fragrances': 'catFragrances' };
-    const activeId = catMap[category];
-    if (activeId) document.getElementById(activeId).classList.add('active');
-}
+  });
 
-// ===== تحديث عدد السلة =====
-function updateCartBadge() {
-    var cart = JSON.parse(localStorage.getItem('cart')) || [];
-    var total = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-    document.getElementById('cartBadge').textContent = total;
-}
+  document.getElementById('searchBtn').addEventListener('click', function() {
+    const q = document.getElementById('searchInput').value.trim();
+    if (q) window.location.href = 'search-result.html?q=' + encodeURIComponent(q);
+  });
+  document.getElementById('searchInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const q = this.value.trim();
+      if (q) window.location.href = 'search-result.html?q=' + encodeURIComponent(q);
+    }
+  });
 
-// ===== البحث =====
-function searchProduct() {
-    var query = document.getElementById('searchInput').value.trim();
-    if (query) window.location.href = './search-result.html?q=' + encodeURIComponent(query);
-    else alert('⚠️ الرجاء إدخال كلمة البحث');
-}
+  // Check URL param for category
+  const urlCat = new URLSearchParams(window.location.search).get('cat') || 'all';
+  const matchBtn = document.querySelector(`.filter-btn[data-cat="${urlCat}"]`);
+  if (matchBtn) { document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); matchBtn.classList.add('active'); }
 
-document.getElementById('searchInput').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') searchProduct();
-});
-
-// ===== تحميل الصفحة =====
-$(document).ready(function() {
-    renderProducts();
-    updateCartBadge();
-});
+  document.addEventListener('DOMContentLoaded', function() { renderStore(urlCat); });
 </script>
-
 </body>
 </html>

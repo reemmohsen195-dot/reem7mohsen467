@@ -1,238 +1,157 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="pragma" content="no-cache" />
-<meta http-equiv="cache-control" content="max-age=604800" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<title>إنهاء الطلب - المسعودي للعطور</title>
-
-<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-
-<!-- jQuery -->
-<script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
-
-<!-- Bootstrap4 files-->
-<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-
-<!-- Font awesome 5 -->
-<link href="fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
-
-<!-- custom style -->
-<link href="css/ui.css" rel="stylesheet" type="text/css"/>
-<link href="css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
-
-<script src="js/script.js" type="text/javascript"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إتمام الطلب – المسعودي للعطور</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ===== شريط الإعلانات ===== -->
-<div style="background: linear-gradient(135deg, #8B4513, #D4A574); color: #fff; padding: 10px 0; text-align: center; font-size: 1.1rem; font-weight: bold; border-bottom: 3px solid #FFD700;">
-    <i class="fas fa-gift" style="margin: 0 10px; color: #FFD700;"></i>
-    🎉 عروضات بداية السنة! تخفيضات خاصة لزبائننا المشتركين في منصة التسويق المسعودي للعطور
-    <i class="fas fa-gift" style="margin: 0 10px; color: #FFD700;"></i>
+<div id="site-header"></div>
+
+<div class="page-hero">
+  <h1>📦 إتمام الطلب</h1>
+  <p>أكمل معلومات التوصيل لإنهاء طلبك</p>
+</div>
+<div class="breadcrumb-nav">
+  <a href="index.html">الرئيسية</a> ← <a href="cart.html">السلة</a> ← إتمام الطلب
 </div>
 
-<header class="section-header">
-<nav class="navbar p-md-0 navbar-expand-sm navbar-light border-bottom">
-<div class="container">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTop4">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown"><a href="#" class="nav-link"> العربية </a></li>
-        <li class="nav-item dropdown"><a href="#" class="nav-link"> ريال يمني </a></li>
-    </ul>
-    <ul class="navbar-nav">
-        <li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> البريد الإلكتروني </a></li>
-        <li><a href="#" class="nav-link"> <i class="fa fa-phone"></i> اتصل بنا </a></li>
-    </ul>
+<div style="max-width:1000px;margin:0 auto;padding:20px;display:grid;grid-template-columns:1fr 360px;gap:24px;" id="orderLayout">
+
+  <!-- Order Form -->
+  <div class="order-form-card">
+    <h3 class="order-section-title">👤 معلومات التواصل</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label>الاسم الأول</label>
+        <input type="text" id="oFirstName" placeholder="محمد">
+      </div>
+      <div class="form-group">
+        <label>الاسم الأخير</label>
+        <input type="text" id="oLastName" placeholder="المسعودي">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>📞 رقم الهاتف</label>
+      <input type="tel" id="oPhone" placeholder="+967 7XX XXX XXX">
+    </div>
+    <div class="form-group">
+      <label>📧 البريد الإلكتروني (اختياري)</label>
+      <input type="email" id="oEmail" placeholder="example@email.com">
+    </div>
+
+    <h3 class="order-section-title" style="margin-top:24px;">📍 عنوان التوصيل</h3>
+    <div class="form-group">
+      <label>المحافظة / المدينة</label>
+      <select id="oCity">
+        <option value="">اختر المحافظة</option>
+        <option>صنعاء</option>
+        <option>عدن</option>
+        <option>تعز</option>
+        <option>الحديدة</option>
+        <option>إب</option>
+        <option>المكلا</option>
+        <option>سيئون</option>
+        <option>ذمار</option>
+        <option>حضرموت</option>
+        <option>مأرب</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>الحي / المنطقة</label>
+      <input type="text" id="oArea" placeholder="مثال: حدة، الزبيري، المعلا...">
+    </div>
+    <div class="form-group">
+      <label>تفاصيل العنوان</label>
+      <input type="text" id="oAddress" placeholder="الشارع، رقم المبنى، علامة مميزة...">
+    </div>
+
+    <h3 class="order-section-title" style="margin-top:24px;">💳 طريقة الدفع</h3>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <label style="display:flex;align-items:center;gap:10px;padding:12px;border:1.5px solid #e0e0e0;border-radius:8px;cursor:pointer;">
+        <input type="radio" name="payment" value="cash" checked> 💵 الدفع نقداً عند الاستلام
+      </label>
+      <label style="display:flex;align-items:center;gap:10px;padding:12px;border:1.5px solid #e0e0e0;border-radius:8px;cursor:pointer;">
+        <input type="radio" name="payment" value="transfer"> 🏦 تحويل بنكي
+      </label>
+      <label style="display:flex;align-items:center;gap:10px;padding:12px;border:1.5px solid #e0e0e0;border-radius:8px;cursor:pointer;">
+        <input type="radio" name="payment" value="jaib"> 📱 جيب / كاش
+      </label>
+    </div>
+
+    <div class="form-group" style="margin-top:16px;">
+      <label>ملاحظات إضافية (اختياري)</label>
+      <textarea id="oNotes" style="width:100%;padding:10px;border:1.5px solid #e0e0e0;border-radius:8px;font-family:Tajawal,sans-serif;resize:vertical;height:80px;" placeholder="أي تعليمات خاصة للتوصيل..."></textarea>
+    </div>
+
+    <button onclick="placeOrder()" style="width:100%;padding:14px;background:linear-gradient(135deg,#28a745,#1e7e34);color:white;border-radius:30px;font-family:Tajawal,sans-serif;font-size:15px;font-weight:700;border:none;cursor:pointer;margin-top:8px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+      ✅ تأكيد الطلب
+    </button>
   </div>
-</div>
-</nav>
 
-<section class="header-main border-bottom">
-    <div class="container">
-<div class="row align-items-center">
-    <div class="col-lg-2 col-md-3 col-6">
-        <a href="./" class="brand-wrap" style="font-size: 30px; text-decoration: none;">
-            المسعودي <span style="color: #8B4513; font-weight: bold;">للعطور</span>
-        </a>
+  <!-- Order Summary -->
+  <div>
+    <div class="order-form-card" style="position:sticky;top:20px;">
+      <h3 class="order-section-title">🧾 ملخص الطلب</h3>
+      <div id="orderSummaryItems"></div>
+      <div id="orderSummaryTotals"></div>
     </div>
-    <div class="col-lg col-sm col-md col-6 flex-grow-0">
-        <div class="category-wrap dropdown d-inline-block float-right">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
-                <i class="fa fa-bars"></i> جميع الأقسام
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">عطور رجالية</a>
-                <a class="dropdown-item" href="#">عطور نسائية</a>
-                <a class="dropdown-item" href="#">بخور العوده</a>
-                <a class="dropdown-item" href="#">بخور الملكي</a>
-                <a class="dropdown-item" href="#">رائحات</a>
-            </div>
-        </div>
-    </div>
-    <a href="./store.html" class="btn btn-outline-primary">المتجر</a>
-    <div class="col-lg col-md-6 col-sm-12 col">
-        <form action="#" class="search">
-            <div class="input-group w-100">
-                <input type="text" class="form-control" style="width:60%;" placeholder="ابحث عن عطر...">
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
-        <div class="d-flex justify-content-end mb-3 mb-lg-0">
-            <div class="widget-header">
-                <small class="title text-muted">مرحباً بكم!</small>
-                <div> 
-                    <a href="./signin.html">تسجيل الدخول</a> <span class="dark-transp"> | </span>
-                    <a href="./register.html">إنشاء حساب</a>
-                </div>
-            </div>
-            <a href="./cart.html" class="widget-header pl-3 ml-3">
-                <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
-                <span class="badge badge-pill badge-danger notify">0</span>
-            </a>
-        </div>
-    </div>
-</div>
-    </div>
-</section>
-</header>
-
-<!-- ========================= PLACE ORDER ========================= -->
-<section class="section-content padding-y bg">
-<div class="container">
-
-<div class="row">
-        <main class="col-md-8">
-
-<article class="card mb-4">
-<div class="card-body">
-    <h4 class="card-title mb-4">مراجعة الطلب</h4>
-    <div class="row">
-        <div class="col-md-6">
-            <figure class="itemside mb-4">
-                <div class="aside"><img src="https://suroor.com/cdn/shop/products/6_43b53c79-60dc-47fe-a3fe-91f0a822b3b1.jpg" class="border img-sm" style="width:80px; height:80px; object-fit:cover;"></div>
-                <figcaption class="info">
-                    <p>بخور عدني عرائسي</p>
-                    <span class="text-muted">1x = ﷼ 35,000</span>
-                </figcaption>
-            </figure>
-        </div>
-        <div class="col-md-6">
-            <figure class="itemside mb-4">
-                <div class="aside"><img src="https://dkhoonalmadina.com/cdn/shop/files/1_50ab0ba4-d445-4f04-a12c-8d08d9dfd639_800x.jpg" class="border img-sm" style="width:80px; height:80px; object-fit:cover;"></div>
-                <figcaption class="info">
-                    <p>عود مروقي (تولة)</p>
-                    <span class="text-muted">1x = ﷼ 10,000</span>
-                </figcaption>
-            </figure>
-        </div>
-    </div>
-</div>
-</article>
-
-<article class="card mb-4">
-<div class="card-body">
-    <h4 class="card-title mb-4">معلومات التواصل</h4>
-    <form action="">
-        <div class="row">
-            <div class="form-group col-sm-6">
-                <label>الاسم الأول</label>
-                <input type="text" placeholder="اكتب هنا" class="form-control">
-            </div>
-            <div class="form-group col-sm-6">
-                <label>الاسم الأخير</label>
-                <input type="text" placeholder="اكتب هنا" class="form-control">
-            </div>
-            <div class="form-group col-sm-6">
-                <label>رقم الجوال</label>
-                <input type="text" value="+967" class="form-control">
-            </div>
-            <div class="form-group col-sm-6">
-                <label>البريد الإلكتروني</label>
-                <input type="email" placeholder="example@gmail.com" class="form-control">
-            </div>
-        </div>
-    </form>
-</div>
-</article>
-
-<article class="card mb-4">
-<div class="card-body">
-    <h4 class="card-title mb-4">معلومات التوصيل</h4>
-    <form action="">
-        <div class="row">
-                <div class="form-group col-sm-6">
-                    <label>الدولة*</label>
-                    <select name="" class="form-control">
-                        <option value="">اليمن</option>
-                    </select>
-                </div>
-                <div class="form-group col-sm-6">
-                    <label>المدينة*</label>
-                    <input type="text" placeholder="صنعاء" class="form-control">
-                </div>
-                <div class="form-group col-sm-8">
-                    <label>الشارع*</label>
-                    <input type="text" placeholder="اكتب هنا" class="form-control">
-                </div>
-                <div class="form-group col-sm-4">
-                    <label>المبنى</label>
-                    <input type="text" placeholder="" class="form-control">
-                </div>
-        </div>
-    </form>
-</div>
-</article>
-
-        </main>
-        <aside class="col-md-4">
-            <div class="card">
-        <div class="card-body">
-            <dl class="dlist-align">
-              <dt>السعر الإجمالي:</dt>
-              <dd class="text-right">﷼ 45,000</dd>
-            </dl>
-            <dl class="dlist-align">
-              <dt>الضريبة:</dt>
-              <dd class="text-right">﷼ 0</dd>
-            </dl>
-            <dl class="dlist-align">
-              <dt>المجموع:</dt>
-              <dd class="text-right text-dark b"><strong>﷼ 45,000</strong></dd>
-            </dl>
-            <hr>
-            <p class="text-center mb-3">
-                <img src="./images/misc/payments.png" height="26">
-            </p>
-            <a href="./order_complete.html" class="btn btn-primary btn-block"> تأكيد الطلب </a>
-        </div>
-        </div>
-        </aside>
-    </div>
+  </div>
 
 </div>
-</section>
 
-<!-- ========================= FOOTER ========================= -->
-<footer class="section-footer border-top padding-y">
-    <div class="container">
-        <p class="float-md-right">&copy; 2025 المسعودي للعطور</p>
-        <p><a href="#">الشروط والأحكام</a></p>
-    </div>
-</footer>
+<div id="site-footer"></div>
 
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script>
+  function renderOrderSummary() {
+    const cart = getCart();
+    if (cart.length === 0) { window.location.href = 'cart.html'; return; }
+
+    const itemsHtml = cart.map(item => {
+      const p = products.find(pr => pr.id === item.id);
+      if (!p) return '';
+      return `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:13px;">
+        <span>${p.emoji} ${p.name} × ${item.qty}</span>
+        <span style="font-weight:700;">${formatPrice(p.price * item.qty)}</span>
+      </div>`;
+    }).join('');
+
+    const subtotal = getCartTotal();
+    const shipping = 1500;
+    const total = subtotal + shipping;
+
+    document.getElementById('orderSummaryItems').innerHTML = itemsHtml;
+    document.getElementById('orderSummaryTotals').innerHTML = `
+      <div class="summary-row" style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:13px;display:flex;justify-content:space-between;"><span>المجموع الفرعي</span><span>${formatPrice(subtotal)}</span></div>
+      <div class="summary-row" style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:13px;display:flex;justify-content:space-between;"><span>التوصيل</span><span>${formatPrice(shipping)}</span></div>
+      <div style="padding:10px 0;display:flex;justify-content:space-between;font-size:16px;font-weight:900;color:var(--brown);"><span>الإجمالي</span><span>${formatPrice(total)}</span></div>`;
+  }
+
+  function placeOrder() {
+    const phone = document.getElementById('oPhone').value.trim();
+    const city = document.getElementById('oCity').value;
+    if (!phone || !city) {
+      showToast('يرجى ملء رقم الهاتف والمدينة على الأقل', 'error');
+      return;
+    }
+    // Generate order number
+    const orderNum = 'MSW-' + Date.now().toString().slice(-6);
+    localStorage.setItem('last_order', orderNum);
+    // Clear cart
+    localStorage.removeItem('massoudi_cart');
+    window.location.href = 'order_complete.html?order=' + orderNum;
+  }
+
+  // Handle responsive layout
+  if (window.innerWidth < 768) {
+    document.getElementById('orderLayout').style.gridTemplateColumns = '1fr';
+  }
+
+  document.addEventListener('DOMContentLoaded', renderOrderSummary);
+</script>
 </body>
 </html>
